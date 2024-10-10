@@ -1,24 +1,55 @@
 """
-Módulo de views para o aplicativo 'cars'.
+Car CRUD Views Module
 
-Este módulo fornece views genéricas para operações de CRUD (Create, Read, Update, Delete) sobre o modelo Car.
-As views permitem listar, criar, detalhar, atualizar e deletar carros no sistema. Algumas views requerem
-autenticação do usuário para acesso.
-
-Classes:
-    - CarsListView: View para listar os carros disponíveis.
-    - CarDetailView: View para exibir detalhes de um carro específico.
-    - NewCarCreateView: View para criar um novo carro (requer autenticação).
-    - CarUpdateView: View para atualizar um carro existente (requer autenticação).
-    - CarDeleteView: View para deletar um carro existente (requer autenticação).
+Este módulo contém as views para as operações de CRUD (Create, Read, Update, Delete) do modelo `Car` 
+no aplicativo 'cars'. As views permitem listar, visualizar detalhes, criar, atualizar e excluir 
+carros. Algumas dessas operações exigem que o usuário esteja autenticado.
 
 Dependências:
-    - cars.models.Car: Modelo de dados usado pela aplicação.
-    - cars.forms.CarModelForm: Formulário usado para criar e atualizar um carro.
-    - django.contrib.auth.decorators.login_required: Decorador para exigir autenticação do usuário.
-    - django.utils.decorators.method_decorator: Decorador de funções para métodos de classe.
-    - django.urls.reverse_lazy: Utilitário para construir URLs por meio de nomes de view.
-    - django.views.generic.*: Views genéricas do Django para operações CRUD.
+-------------
+- cars.models.Car: Modelo de dados do carro.
+- cars.models.Brand: Modelo relacionado à marca dos carros.
+- cars.forms.CarModelForm: Formulário usado para criação e atualização dos carros.
+- django.contrib.auth.decorators.login_required: Decorador que garante que o usuário esteja autenticado para acessar certas views.
+- django.utils.decorators.method_decorator: Decorador para métodos de classe.
+- django.urls.reverse_lazy: Utilitário para gerar URLs de maneira preguiçosa (lazy).
+- django.views.generic: Views genéricas do Django utilizadas para manipulação CRUD.
+
+Classes:
+--------
+- CarsListView: Lista os carros cadastrados com opções de filtro e ordenação.
+- CarDetailView: Exibe os detalhes de um carro específico.
+- NewCarCreateView: Permite a criação de um novo carro (requer autenticação).
+- CarUpdateView: Permite a edição de um carro existente (requer autenticação).
+- CarDeleteView: Permite a exclusão de um carro existente (requer autenticação).
+
+Fluxo de Execução:
+------------------
+1. **CarsListView**: Exibe uma lista de carros, com opções de filtro por modelo, ano de fabricação, ano do modelo e marca. A lista é ordenada por modelo.
+2. **CarDetailView**: Exibe detalhes de um carro específico, como modelo, ano e marca.
+3. **NewCarCreateView**: Formulário para adicionar um novo carro. O usuário precisa estar autenticado.
+4. **CarUpdateView**: Formulário para editar informações de um carro existente. O usuário precisa estar autenticado.
+5. **CarDeleteView**: Confirmação de exclusão de um carro, redirecionando o usuário para a lista de carros após a exclusão. O usuário precisa estar autenticado.
+
+Autenticação:
+-------------
+As views `NewCarCreateView`, `CarUpdateView` e `CarDeleteView` exigem que o usuário esteja autenticado. 
+Se o usuário não estiver autenticado, será redirecionado para a página de login.
+
+Exemplo de Uso:
+---------------
+- **Listagem de carros**: Exibe todos os carros disponíveis e permite filtragem:
+    $ python manage.py runserver
+    Navegar para: /cars/
+    
+- **Criação de novo carro**: Formulário para criar um novo carro (usuário autenticado):
+    Navegar para: /cars/new/
+    
+- **Atualização de carro**: Formulário para editar um carro existente (usuário autenticado):
+    Navegar para: /cars/<pk>/update/
+
+- **Exclusão de carro**: Confirmação para excluir um carro (usuário autenticado):
+    Navegar para: /cars/<pk>/delete/
 """
 
 from cars.models import Car, Brand
