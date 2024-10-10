@@ -1,0 +1,78 @@
+/* ========================
+   Estilização do Card
+   ======================== */
+   .card {
+    max-width: 600px; /* Largura máxima do cartão */
+    margin: 150px auto; /* Centraliza vertical e horizontalmente */
+    padding: 30px; /* Espaçamento interno */
+    background-color: #e0e0e0; /* Cor de fundo */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para elevação */
+    border: 1px solid #e0e0e0; /* Borda ao redor do cartão */
+}
+
+.card h1 {
+    font-size: 1.8rem; /* Tamanho da fonte do título */
+    font-weight: 600; /* Peso da fonte */
+    color: #333; /* Cor do texto do título */
+}
+
+.card p {
+    font-size: 1rem; /* Tamanho da fonte do parágrafo */
+    line-height: 1.5; /* Altura da linha */
+    color: #555; /* Cor do texto do parágrafo */
+}
+
+/* ========================
+   Estilização dos Botões
+   ======================== */
+   .btn {
+    display: inline-block; /* Exibição em bloco inline */
+    background-color: #0096c7; /* Cor de fundo padrão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remoção da borda padrão */
+    width: 150px; /* Largura fixa para uniformidade */
+    padding: 12px 0; /* Espaçamento interno */
+    font-size: 15px; /* Tamanho da fonte */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Indicação de botão clicável */
+    transition: background-color 0.3s ease-in-out; /* Transição suave */
+    margin: 0 5px; /* Espaçamento horizontal entre botões */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Botão de Perigo */
+.btn-danger {
+    background-color: #dc3545; /* Cor de fundo vermelho */
+}
+
+.btn-danger:hover {
+    background-color: #9a0c1b; /* Cor ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+.btn-secondary {
+    background-color: #3d4c59; /* Cor de fundo para o botão secundário */
+}
+
+.btn-secondary:hover {
+    background-color: #748ba1; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Mensagem de Aviso */
+.warning-message {
+    color: #dc3545; /* Cor de aviso */
+    font-size: 14px; /* Tamanho da fonte */
+    margin-top: 10px; /* Espaçamento acima */
+}
+
+/* ========================
+   Alinhamento dos Botões
+   ======================== */
+.buttons-container {
+    display: flex; /* Exibe os botões em linha */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Alinha verticalmente no centro */
+    margin: 30px 0 20px; /* Margem acima e abaixo do container */
+}

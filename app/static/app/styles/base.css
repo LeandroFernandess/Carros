@@ -1,0 +1,135 @@
+/* ========================
+   Estilização Global
+   ======================== */
+   body {
+    font-family: 'Inter', sans-serif; /* Define a fonte padrão */
+    background-color: #eeeded; /* Cor de fundo do body */
+    color: #000000; /* Cor padrão do texto */
+    margin: 0; /* Remove margens padrão */
+    display: flex; /* Define layout flexbox */
+    flex-direction: column; /* Alinha itens em coluna */
+    min-height: 100vh; /* Ocupa a altura total da tela */
+}
+
+.content {
+    flex: 1; /* Faz o conteúdo principal ocupar máximo espaço */
+}
+
+/* ========================
+   Cabeçalho (Header)
+   ======================== */
+header {
+    text-align: center; /* Centraliza o texto do cabeçalho */
+    padding: 25px 0; /* Espaçamento acima e abaixo */
+    background-color: #98aacb; /* Cor de fundo do cabeçalho */
+}
+
+/* ========================
+   Navegação (Nav)
+   ======================== */
+nav {
+    display: flex; /* Alinha itens com flexbox */
+    align-items: center; /* Centraliza os itens verticalmente */
+    background-color: #98aacb; /* Cor de fundo da navegação */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+nav .welcome-message {
+    margin-right: auto; /* Alinha à esquerda */
+    color: #000000; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+}
+
+nav ul {
+    display: flex; /* Exibe lista em linha */
+    list-style: none; /* Remove marcadores de lista */
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove preenchimento padrão */
+}
+
+nav ul li {
+    margin: 0 10px; /* Espaço entre itens da lista */
+}
+
+nav ul li a {
+    color: #ffffff; /* Cor do texto */
+    background-color: #61768b; /* Cor de fundo */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
+}
+
+nav ul li a:hover {
+    background-color: #3c5771; /* Cor do fundo ao passar o mouse */
+    transform: translateY(-2px); /* Pequeno deslocamento para cima */
+    color: #ffffff; /* Mantém a cor do texto */
+}
+
+/* ========================
+   Rodapé (Footer)
+   ======================== */
+footer {
+    background-color: #848484; /* Cor de fundo do rodapé */
+    color: #ffffff; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* ========================
+   Estilização de Links Globais
+   ======================== */
+a {
+    font-size: 18px; /* Tamanho da fonte dos links */
+    color: #ffffff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+a:hover {
+    color: #414a65; /* Cor do texto ao passar o mouse */
+}
+
+/* ========================
+   Tema Escuro
+   ======================== */
+body.dark-mode {
+    background-color: #222; /* Cor de fundo no modo escuro */
+    color: #444444; /* Cor do texto no modo escuro */
+}
+
+body.dark-mode header,
+body.dark-mode nav {
+    background-color: #2c3a47; /* Fundo de cabeçalho e navegação no modo escuro */
+}
+
+body.dark-mode nav .welcome-message,
+body.dark-mode nav ul li a {
+    color: #ffffff; /* Melhor legibilidade para texto no modo escuro */
+}
+
+body.dark-mode nav ul li a {
+    background-color: #34495e; /* Fundo dos links no modo escuro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no modo escuro */
+}
+
+body.dark-mode footer {
+    background-color: #6d6c6c; /* Fundo do rodapé no modo escuro */
+    color: #ffffff; /* Cor do texto do rodapé no modo escuro */
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: #8799aa; /* Fundo dos links no hover no modo escuro */
+}
+
+/* ========================
+   Botão de Alternar Tema
+   ======================== */
+#theme-toggle {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Indica que é clicável */
+    font-size: 24px; /* Tamanho da fonte do ícone */
+}

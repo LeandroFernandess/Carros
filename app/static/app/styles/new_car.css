@@ -1,0 +1,118 @@
+/* ========================
+   Container do formulário
+   ======================== */
+.container {
+    max-width: 600px; /* Define a largura máxima do container */
+    margin: 40px auto; /* Centraliza o container horizontalmente */
+    padding: 0; /* Remove qualquer espaçamento interno */
+    background-color: rgb(244, 244, 244); /* Cor de fundo clara */
+    border-radius: 8px; /* Arredonda os cantos do container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona sombra para profundidade */
+    transition: transform 0.2s; /* Suaviza o efeito de transformação */
+}
+
+.container, .info-section {
+    padding: 20px; /* Aplica espaçamento interno */
+    color: #151515; /* Define a cor do texto */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+}
+
+h2 {
+    text-align: center; /* Centraliza o texto do título */
+    font-family: 'Inter', sans-serif; /* Fonte utilizada no título */
+    color: #333; /* Cor do texto */
+    margin-bottom: 40px; /* Espaçamento abaixo do título */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 10px; /* Espaçamento interno ao redor do título */
+    border-radius: 5px; /* Arredonda os cantos */
+    border: 1px solid #ddd; /* Adiciona uma borda leve */
+    background-color: #f0f0f0; /* Cor de fundo do título */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
+}
+
+/* ========================
+   Estilos do formulário
+   ======================== */
+.car-form {
+    display: flex; /* Usa flexbox para layout dos elementos */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    padding: 20px; /* Espaçamento interno do formulário */
+}
+
+.car-form div {
+    margin-bottom: 20px; /* Espaçamento entre os elementos do formulário */
+    font-family: 'Inter', sans-serif; /* Fonte dos textos */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.car-form label {
+    font-weight: 500; /* Peso médio do texto */
+    margin-bottom: 8px; /* Espaçamento abaixo dos rótulos */
+    display: block; /* Faz o rótulo ocupar toda a largura disponível */
+    color: #666; /* Cor do texto dos rótulos */
+    transition: color 0.3s; /* Suaviza a transição de cor */
+}
+
+.car-form input[type="text"],
+.car-form input[type="number"],
+.car-form select,
+.car-form textarea {
+    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    padding: 12px; /* Espaçamento interno dos campos */
+    border: 1px solid #151515; /* Borda ao redor dos campos */
+    border-radius: 5px; /* Arredonda os cantos dos campos */
+    box-sizing: border-box; /* Inclui a borda no cálculo total da largura */
+    font-size: 16px; /* Tamanho da fonte dos campos */
+    color: #262424; /* Cor do texto dos campos */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Suaviza a transição de borda e sombra */
+}
+
+.car-form input:focus,
+.car-form select:focus,
+.car-form textarea:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Sombra ao focar */
+    outline: none; /* Remove a borda padrão do navegador */
+}
+
+/* ========================
+   Botão de Submit
+   ======================== */
+   .car-form .btn {
+    display: block; /* Faz o botão ocupar toda a largura disponível */
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background-color: #495562; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    cursor: pointer; /* Modifica o cursor ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transições suaves */
+    text-align: center; /* Centraliza o texto no botão */
+    width: fit-content; /* Ajusta a largura para o conteúdo */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+.car-form .btn:hover {
+    background-color: #5e7083; /* Cor ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+/* ========================
+    Rodapé
+   ======================== */
+.footer {
+    background-color: #343a40; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto do rodapé */
+    text-align: center; /* Centraliza o texto no rodapé */
+    padding: 15px 0; /* Espaçamento interno vertical do rodapé */
+    position: relative; /* Posicionamento relativo do rodapé */
+    bottom: 0; /* Posiciona-o no final da página */
+    width: 100%; /* Largura total */
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1); /* Sombra para contraste com o conteúdo acima */
+    font-size: 14px; /* Tamanho da fonte do rodapé */
+}

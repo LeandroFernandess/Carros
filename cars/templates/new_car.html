@@ -1,0 +1,40 @@
+<!-- Indica que este template herda de "base.html", usando o mecanismo de templates do Django. -->
+{% extends "base.html" %}
+
+<!-- Carrega a tag 'static' para incluir arquivos estáticos, como CSS. -->
+{% load static %}
+
+<!-- Este bloco irá incluir estilos CSS adicionais, específico para este template. -->
+{% block extra_styles %}
+<!-- Inclui o arquivo CSS específico deste template. -->
+<link rel="stylesheet" type="text/css" href="{% static 'app/styles/new_car.css' %}">
+{% endblock %}
+
+<!-- Define o bloco de conteúdo principal do template. Esse bloco substituirá o conteúdo correspondente em "base.html". -->
+{% block content %}
+    <!-- Contêiner principal de margem para o layout do formulário de cadastro de carros. -->
+    <div class="container my-5">
+        <!-- Título do formulário de cadastro. -->
+        <h2 class="mb-4">Cadastro de Carros</h2>
+        
+        <!-- Seção Informativa para orientação do usuário. -->
+        <div class="info-section mb-4">
+            <!-- Texto informativo para guia durante o preenchimento do formulário. -->
+            <p>Preencha o formulário abaixo para cadastrar seu carro. As informações serão utilizadas para criar um anúncio detalhado do seu veículo.</p>
+        </div>
+        
+        <!-- Formulário de cadastro de carro, usando método POST para envio de dados. enctype é usado para upload de arquivos. -->
+        <form method="post" enctype="multipart/form-data" class="car-form">
+            <!-- Proteção contra ataques CSRF, obrigatório em formulários POST. -->
+            {% csrf_token %}
+            
+            <!-- Renderiza o formulário Django no formato de parágrafos. -->
+            <div>
+                {{ form.as_p }}
+            </div>
+            
+            <!-- Botão para submeter o formulário e cadastrar o veículo. -->
+            <button type="submit" class="btn">Cadastrar veículo</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+/* ========================
+   Estilização do Cartão do Carro
+   ======================== */
+   .car-card {
+    background-color: #e2e2e2; /* Cor de fundo do cartão */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra para elevação */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Oculta o conteúdo transbordante */
+    text-align: center; /* Centraliza o texto */
+    transition: all 0.3s ease; /* Transição suave para transformações */
+    max-width: 500px; /* Largura máxima do cartão */
+    margin: 20px auto; /* Centraliza horizontalmente e define a margem */
+    margin-top: 60px; /* Espaçamento superior do texto */
+  }
+  
+  .car-card:hover {
+    cursor: pointer; /* Indicação de interação clicável */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+  }
+  
+  .car-card img {
+    width: 100%; /* Largura completa do cartão */
+    height: 300px; /* Altura fixa da imagem */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+  }
+  
+  .car-card h2 {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    margin: 10px; /* Espaçamento em torno do título */
+  }
+  
+  .car-card p {
+    font-size: 1rem; /* Tamanho da fonte do parágrafo */
+    margin-bottom: 10px; /* Espaçamento inferior do texto */
+  }
+  
+  /* ========================
+     Estilização dos Botões
+     ======================== */
+  .buttons-container {
+    display: flex; /* Exibe os botões em linha */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    margin-top: 10px; /* Margem superior */
+    margin-bottom: 20px; /* Margem inferior */
+  }
+  
+  .btn {
+    display: inline-block; /* Exibição em bloco inline */
+    background-color: #34495e; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    border: none; /* Remoção da borda padrão */
+    padding: 10px 75px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Indicação de botão clicável */
+    transition: background-color 0.3s ease-in-out; /* Transição suave */
+    margin: 0 10px; /* Espaçamento horizontal entre botões */
+  }
+  
+  .btn:hover {
+    background-color: #666b84; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+  }
+  

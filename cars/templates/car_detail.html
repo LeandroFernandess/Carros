@@ -1,0 +1,50 @@
+<!-- Indica que este template herda de "base.html", usando o mecanismo de templates do Django. -->
+{% extends "base.html" %}
+
+<!-- Carrega a tag 'static' para incluir arquivos estáticos, como CSS. -->
+{% load static %}
+
+<!-- Este bloco irá incluir estilos CSS adicionais, específico para este template. -->
+{% block extra_styles %}
+<!-- Inclui o arquivo CSS específico deste template. -->
+<link rel="stylesheet" type="text/css" href="{% static 'app/styles/cars_detail.css' %}">
+{% endblock %}
+
+<!-- Define o bloco de conteúdo principal do template. Esse bloco substituirá o conteúdo correspondente em "base.html". -->
+{% block content %}
+  <!-- Cartão de informações do carro -->
+  <div class="car-card">
+    {% if object.photo %}
+      <!-- Exibir a foto do carro se estiver disponível -->
+      <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }}">
+    {% else %}
+      <!-- Mensagem a ser exibida se não houver foto disponível do carro -->
+      <p class="no-photo">Foto não disponível</p>
+    {% endif %}
+    <!-- Exibir a marca e o modelo do carro -->
+    <h2>{{ object.brand }} {{ object.model }}</h2>
+    <!-- Exibir o ano de fabricação do carro -->
+    <p><strong>Ano de fabricação:</strong> {{ object.factory_year }}</p>
+    <!-- Exibir o ano do modelo do carro -->
+    <p><strong>Ano do modelo:</strong> {{ object.model_year }}</p>
+    <!-- Exibir a placa do carro -->
+    <p><strong>Placa:</strong> {{ object.plate }}</p>
+    <!-- Exibir o preço do carro -->
+    <p><strong>Preço:</strong> R$ {{ object.value }}</p>
+    {% if object.bio %}
+    <!-- Exibir descrição ou biografia do carro -->
+    <p><strong>Biografia:</strong></p>
+    <p>{{ object.bio }}</p>
+  {% endif %}
+  
+  </div>
+  <!-- Verifica se o usuário está autenticado; se não estiver, os botões não serão exibidos -->
+  {% if user.is_authenticated %}
+  <div class="buttons-container">
+    <!-- Link para editar as informações do carro -->
+    <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Editar carro</a>
+    <!-- Link para deletar o carro -->
+    <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-primary">Deletar carro</a>
+  </div>
+  {% endif %}
+{% endblock %}

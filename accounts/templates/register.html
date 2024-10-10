@@ -1,0 +1,80 @@
+<!-- Carrega a tag 'static' para incluir arquivos estáticos, como CSS. -->
+{% load static %}
+<!-- Define o bloco de conteúdo principal do template. Esse bloco substituirá o conteúdo correspondente em "base.html". -->
+{% block content %}
+    <!-- Link para arquivo CSS externo específico do formulário de registro -->
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/styles.css' %}">
+
+    <!-- Contêiner principal que encapsula ambos os lados do layout -->
+    <div class="container">
+        
+        <!-- Divisão esquerda designada para imagem de fundo, aplicada via CSS -->
+        <div class="left-side">
+            <!-- Imagem de fundo aplicada via CSS -->
+        </div>
+        
+        <!-- Divisão direita que contém o formulário de registro -->
+        <div class="right-side">
+            <div class="form-container">
+                
+                <!-- Seção de resumo e boas-vindas para novos usuários -->
+                <div class="summary">
+                    <h2>Crie sua conta no CarDeal</h2>
+                    <p>Preencha o formulário abaixo para se registrar em nosso sistema e começar a anunciar seus carros agora mesmo!</p>
+                </div>
+
+                <!-- Formulário de registro de usuário, usando método POST para envio de dados -->
+                <form method="post">
+                    <!-- Proteção contra ataques CSRF, necessária em formulários POST -->
+                    {% csrf_token %}
+
+                    <!-- Campo para nome de usuário com tratamento de erros -->
+                    <div class="form-group">
+                        {% for error in user_form.username.errors %}
+                            <!-- Mensagem de erro para validação de nome de usuário -->
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                        <label>Usuário: </label>
+                        {{ user_form.username }}
+                    </div>
+
+                    <!-- Campo para senha com tratamento de erros -->
+                    <div class="form-group">
+                        {% for error in user_form.password1.errors %}
+                            <!-- Mensagem de erro para validação de senha -->
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                        <label>Senha: </label>
+                        {{ user_form.password1 }}
+                    </div>
+
+                    <!-- Campo para confirmação de senha com tratamento de erros -->
+                    <div class="form-group">
+                        {% for error in user_form.password2.errors %}
+                            <!-- Mensagem de erro para validação de confirmação de senha -->
+                            <p class="error-message">{{ error }}</p>
+                        {% endfor %}
+                        <label>Confirmar senha: </label>
+                        {{ user_form.password2 }}
+                    </div>
+                    
+                    <!-- Botão para submeter o formulário e criar novo usuário -->
+                    <input type="submit" value="Criar usuário">
+
+                    <!-- Opção para usuários que já possuem uma conta fazer login -->
+                    <div class="cars-list">
+                        <p>Já possui uma conta?</p>
+                        <a href="{% url 'login' %}">Faça login</a>
+                    </div>
+
+                    <!-- Opção para visualizar carros anunciados sem criar conta ou logar -->
+                    <div class="cars-list">
+                        <p>Não deseja criar uma conta ou efetuar login?</p>
+                        <a href="{% url 'cars_list' %}">Veja os carros já anunciados</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

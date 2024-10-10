@@ -1,0 +1,132 @@
+/* ========================
+   Estilização do Formulário
+   ======================== */
+   form {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 40px auto; /* Centraliza horizontalmente e define a margem */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #e0e0e0; /* Fundo suavemente branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    transition: transform 0.2s; /* Transição suave para transformações */
+}
+
+form:hover {
+    transform: scale(1.02); /* Efeito de leve aumento ao passar o mouse */
+}
+
+form h2 {
+    text-align: center; /* Centraliza o texto do título */
+    font-family: 'Inter', sans-serif; /* Fonte utilizada no título */
+    color: #333; /* Cor do texto */
+    margin-bottom: 40px; /* Espaçamento abaixo do título */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 10px; /* Espaçamento interno ao redor do título */
+    border-radius: 5px; /* Arredonda os cantos */
+    border: 1px solid #ddd; /* Adiciona uma borda leve */
+    background-color: #f0f0f0; /* Cor de fundo do título */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
+}
+
+/* ========================
+   Estilização da Tabela
+   ======================== */
+table {
+    width: 100%; /* Largura completa da tabela */
+    border-collapse: collapse; /* Remova espaços entre bordas */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+th, td {
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: left; /* Alinhamento à esquerda */
+    border-bottom: 1px solid #ccc; /* Linha divisória inferior */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaço entre os grupos de campos */
+}
+
+label {
+    display: block; /* Faz a label ocupar toda a largura disponível */
+    margin-bottom: 5px; /* Espaço entre a label e o campo de input */
+    font-weight: bold; /* (Opcional) Texto em negrito para a label */
+    color: #333; /* (Opcional) Cor do texto da label */
+}
+
+/* ========================
+   Estilização dos Inputs e Textarea
+   ======================== */
+input[type="text"], input[type="number"], select, textarea {
+    width: 90%; /* Largura completa */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    font-size: 16px; /* Tamanho da fonte */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave para foco */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff; /* Cor da borda ao foco */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Sombra ao focar */
+    outline: none; /* Remove outline padrão */
+}
+
+/* ========================
+   Estilização dos Botões
+   ======================== */
+.btn {
+    display: inline-block; /* Exibição em bloco inline */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 10px 20px; /* Espaçamento interno */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indicação de botão clicável */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transição suave */
+    text-align: center; /* Centraliza o texto */
+}
+
+.btn-primary {
+    background-color: #34495e; /* Cor de fundo primária */
+}
+
+.btn-primary:hover {
+    background-color: #627487; /* Cor de fundo primária ao passar o mouse */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Cor de fundo de perigo */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Cor de fundo de perigo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+.btn-secondary {
+    background-color: #89a8ce; /* Cor de fundo secundária */
+}
+
+.btn-secondary:hover {
+    background-color: #5e86a5; /* Cor de fundo secundária ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+.buttons-container {
+    display: flex; /* Exibe botões em linha */
+    justify-content: space-between; /* Distribui espaço entre botões */
+    margin-top: 20px; /* Margem superior */
+}
+
+/* ========================
+   Estilização das Mensagens de Erro
+   ======================== */
+.error-message {
+    color: #dc3545; /* Cor da mensagem de erro */
+    font-size: 14px; /* Tamanho da fonte */
+    margin-top: 5px; /* Espaçamento superior */
+}
