@@ -35,21 +35,6 @@ Autenticação:
 -------------
 As views `NewCarCreateView`, `CarUpdateView` e `CarDeleteView` exigem que o usuário esteja autenticado. 
 Se o usuário não estiver autenticado, será redirecionado para a página de login.
-
-Exemplo de Uso:
----------------
-- **Listagem de carros**: Exibe todos os carros disponíveis e permite filtragem:
-    $ python manage.py runserver
-    Navegar para: /cars/
-    
-- **Criação de novo carro**: Formulário para criar um novo carro (usuário autenticado):
-    Navegar para: /cars/new/
-    
-- **Atualização de carro**: Formulário para editar um carro existente (usuário autenticado):
-    Navegar para: /cars/<pk>/update/
-
-- **Exclusão de carro**: Confirmação para excluir um carro (usuário autenticado):
-    Navegar para: /cars/<pk>/delete/
 """
 
 from cars.models import Car, Brand
