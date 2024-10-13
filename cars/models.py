@@ -1,10 +1,13 @@
 """
-Este módulo define modelos para uma aplicação de gerenciamento de carros.
+Car Models Module
 
-Includes:
-    - Brand: Representa uma marca de carro.
-    - Car: Representa um carro com vários atributos, incluindo uma relação com a marca.
-    - CarInventory: Representa um inventário de carros.
+Este módulo define os modelos para representar uma marca de carro e um carro, além do inventário
+de carros na aplicação. Eles são usados para gerenciar informações e manter o registro atualizado
+de veículos no sistema.
+
+Dependências:
+-------------
+- django.db.models: Biblioteca de ORM do Django utilizada para definir os modelos.
 """
 
 from django.db import models
@@ -13,6 +16,10 @@ from django.db import models
 class Brand(models.Model):
     """
     Classe para representar uma Marca de carro.
+
+    Atributos:
+        id (AutoField): Identificador único para a marca.
+        name (CharField): Nome da marca, com até 200 caracteres.
     """
 
     id = models.AutoField(primary_key=True)
@@ -31,6 +38,17 @@ class Brand(models.Model):
 class Car(models.Model):
     """
     Classe para representar um Carro.
+
+    Atributos:
+        id (AutoField): Identificador único para o carro.
+        model (CharField): Nome do modelo do carro.
+        brand (ForeignKey): Referência à marca do carro.
+        factory_year (IntegerField): Ano de fabricação do carro.
+        model_year (IntegerField): Ano do modelo do carro.
+        plate (CharField): Placa do carro.
+        value (FloatField): Valor do carro.
+        photo (ImageField): Foto do carro.
+        bio (TextField): Biografia do carro, gerada automaticamente.
     """
 
     id = models.AutoField(primary_key=True)
@@ -58,9 +76,9 @@ class CarInventory(models.Model):
     Modelo que representa o inventário de carros.
 
     Atributos:
-        cars_count (int): Número de carros no inventário.
-        cars_value (float): Valor total dos carros no inventário.
-        created_at (datetime): Data e hora de criação do registro.
+        cars_count (IntegerField): Número de carros no inventário.
+        cars_value (FloatField): Valor total dos carros no inventário.
+        created_at (DateTimeField): Data e hora de criação do registro.
     """
 
     cars_count = models.IntegerField()

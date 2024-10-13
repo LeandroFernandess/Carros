@@ -1,28 +1,29 @@
 """
-Configuração do aplicativo 'accounts'.
+Configuração do aplicativo 'accounts' para um projeto Django.
 
-Este módulo contém a classe de configuração da aplicação 'accounts'. Ele define parâmetros importantes
-para o comportamento do aplicativo no projeto Django.
+Descrição:
+----------
+Este módulo especifica a configuração padrão do aplicativo 'accounts'.
 
-Classes:
-    - AccountsConfig: Configurações específicas para o aplicativo 'accounts'. Define o campo padrão
-      para chaves primárias de modelos e o nome do aplicativo.
+Classe:
+-------
+- AccountsConfig: Configurações específicas para o aplicativo 'accounts', incluindo o tipo de chave primária padrão e o nome do aplicativo.
 
-Dependências:
-    - django.apps.AppConfig: Classe base para configurações de aplicativos no Django.
+Atributos da Classe:
+--------------------
+- default_auto_field (str): Especifica o campo padrão para chaves primárias em novos modelos ('BigAutoField').
+- name (str): Nome do aplicativo ('accounts').
+
+Autores:
+--------
+- Configuração gerada com base na estrutura do Django.
 """
 
 from django.apps import AppConfig
 
 
 class AccountsConfig(AppConfig):
-    """
-    Classe de configuração para o aplicativo 'accounts'.
-
-    Atributos:
-        default_auto_field (str): Define o campo padrão para chave primária em novos modelos.
-        name (str): Nome do aplicativo.
-    """
+    """Configurações do aplicativo 'accounts'."""
 
     default_auto_field = "django.db.models.BigAutoField"
     name = "accounts"

@@ -1,11 +1,12 @@
 """
-Configuração da aplicação 'cars' no Django.
+Cars Application Configuration Module
 
-Módulos:
-    cars.apps: Inclui a classe de configuração da aplicação.
+Este módulo configura a aplicação 'cars' no projeto Django, definindo
+atributos essenciais e atividades a serem realizadas quando a aplicação estiver pronta.
 
-Classes:
-    CarsConfig: Configurações específicas para a aplicação de carros.
+Dependências:
+-------------
+- django.apps.AppConfig: Classe base para configurar uma aplicação Django.
 """
 
 from django.apps import AppConfig

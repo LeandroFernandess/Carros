@@ -1,8 +1,8 @@
 """
 Car CRUD Views Module
 
-Este módulo contém as views para as operações de CRUD (Create, Read, Update, Delete) do modelo `Car` 
-no aplicativo 'cars'. As views permitem listar, visualizar detalhes, criar, atualizar e excluir 
+Este módulo contém as views para as operações de CRUD (Create, Read, Update, Delete) do modelo `Car`
+no aplicativo 'cars'. As views permitem listar, visualizar detalhes, criar, atualizar e excluir
 carros. Algumas dessas operações exigem que o usuário esteja autenticado.
 
 Dependências:
@@ -14,27 +14,6 @@ Dependências:
 - django.utils.decorators.method_decorator: Decorador para métodos de classe.
 - django.urls.reverse_lazy: Utilitário para gerar URLs de maneira preguiçosa (lazy).
 - django.views.generic: Views genéricas do Django utilizadas para manipulação CRUD.
-
-Classes:
---------
-- CarsListView: Lista os carros cadastrados com opções de filtro e ordenação.
-- CarDetailView: Exibe os detalhes de um carro específico.
-- NewCarCreateView: Permite a criação de um novo carro (requer autenticação).
-- CarUpdateView: Permite a edição de um carro existente (requer autenticação).
-- CarDeleteView: Permite a exclusão de um carro existente (requer autenticação).
-
-Fluxo de Execução:
-------------------
-1. **CarsListView**: Exibe uma lista de carros, com opções de filtro por modelo, ano de fabricação, ano do modelo e marca. A lista é ordenada por modelo.
-2. **CarDetailView**: Exibe detalhes de um carro específico, como modelo, ano e marca.
-3. **NewCarCreateView**: Formulário para adicionar um novo carro. O usuário precisa estar autenticado.
-4. **CarUpdateView**: Formulário para editar informações de um carro existente. O usuário precisa estar autenticado.
-5. **CarDeleteView**: Confirmação de exclusão de um carro, redirecionando o usuário para a lista de carros após a exclusão. O usuário precisa estar autenticado.
-
-Autenticação:
--------------
-As views `NewCarCreateView`, `CarUpdateView` e `CarDeleteView` exigem que o usuário esteja autenticado. 
-Se o usuário não estiver autenticado, será redirecionado para a página de login.
 """
 
 from cars.models import Car, Brand
@@ -53,19 +32,12 @@ from django.views.generic import (
 
 class CarsListView(ListView):
     """
-    View para listar os carros disponíveis.
-
-    Lista os carros cadastrados no sistema, permitindo a busca filtrada por modelo, ano de fabricação e marca.
-    O resultado é ordenado por modelo.
+    View para listar os carros cadastrados no sistema.
 
     Atributos:
-        model (Model): O modelo de carro utilizado.
-        template_name (str): O template usado para renderizar a lista de carros.
-        context_object_name (str): O nome do contexto definido para acessar os objetos no template.
-
-    Métodos:
-        get_queryset(self): Retorna o queryset filtrado de carros baseado nos parâmetros de busca.
-        get_context_data(self, **kwargs): Adiciona anos e marcas ao contexto para populações de dropdown.
+        model (Model): O modelo do carro.
+        template_name (str): Template usado para a lista de carros.
+        context_object_name (str): Nome no contexto do template para acessar os carros.
     """
 
     model = Car
@@ -74,10 +46,13 @@ class CarsListView(ListView):
 
     def get_queryset(self):
         """
-        Obtém o conjunto de objetos Car, aplicando filtros baseados em busca de modelo, anode fabricação, ano do modelo e marca.
+        Retorna um queryset filtrado de carros.
+
+        Filtra a lista de carros baseado em parâmetros de busca como modelo, ano de fabricação,
+        ano do modelo e marca, ordenando por modelo.
 
         Retorna:
-            QuerySet: Lista de carros filtrada e ordenada por modelo.
+            QuerySet: Carros filtrados e ordenados.
         """
         cars = super().get_queryset().order_by("model")
         search = self.request.GET.get("search")
@@ -100,10 +75,10 @@ class CarsListView(ListView):
         """
         Adiciona dados adicionais ao contexto do template.
 
-        Inclui listas distintas de anos e todas as marcas disponíveis para populações de dropdown.
+        Inclui listas de anos e marcas disponíveis para facilitar a filtragem.
 
         Retorna:
-            dict: Contexto atualizado com anos e marcas.
+            dict: O contexto atualizado com informação adicional.
         """
         context = super().get_context_data(**kwargs)
         context["years"] = Car.objects.values_list("factory_year", flat=True).distinct()
@@ -116,14 +91,12 @@ class CarsListView(ListView):
 
 class CarDetailView(DetailView):
     """
-    View para exibir os detalhes de um carro específico.
-
-    Exibe informações detalhadas sobre um carro selecionado.
+    View para exibir detalhes de um carro específico.
 
     Atributos:
-        model (Model): O modelo de dados usado pela view.
-        template_name (str): O nome do template usado para renderizar a view.
-        context_object_name (str): O nome do objeto no contexto do template.
+        model (Model): O modelo de dados do carro.
+        template_name (str): Template usado para renderizar detalhes do carro.
+        context_object_name (str): Nome do carro no contexto do template.
     """
 
     model = Car
@@ -136,14 +109,13 @@ class NewCarCreateView(CreateView):
     """
     View para criar um novo carro.
 
-    Esta view exibe um formulário para a criação de um novo carro e redireciona para a lista de carros após a criação bem-sucedida.
-    É necessário que o usuário esteja autenticado para acessar a view, sendo redirecionado para a página de login se não estiver autenticado.
+    Requer que o usuário esteja autenticado.
 
-    Attributes:
-        model (Model): O modelo de dados usado pela view.
-        form_class (Form): O formulário usado para criar um novo carro.
-        template_name (str): O nome do template usado para renderizar a view.
-        success_url (str): A URL para a qual redirecionar após a criação bem-sucedida.
+    Atributos:
+        model (Model): Modelo de dados para o carro.
+        form_class (Form): Formulário para criação de novos carros.
+        template_name (str): Template usado para o formulário de criação.
+        success_url (str): URL de redirecionamento após a criação.
     """
 
     model = Car
@@ -157,13 +129,12 @@ class CarUpdateView(UpdateView):
     """
     View para atualizar um carro existente.
 
-    Exibe um formulário para a atualização de um carro e redireciona para os detalhes do carro após o sucesso.
-    É necessário que o usuário esteja autenticado para acessar a view, sendo redirecionado para a página de login se não estiver autenticado.
+    Requer que o usuário esteja autenticado.
 
     Atributos:
-        model (Model): O modelo de dados usado pela view.
-        form_class (Form): O formulário usado para atualizar o carro.
-        template_name (str): O nome do template usado para renderizar a view.
+        model (Model): Modelo de dados para o carro.
+        form_class (Form): Formulário para atualização de carros.
+        template_name (str): Template usado para o formulário de atualização.
     """
 
     model = Car
@@ -172,10 +143,10 @@ class CarUpdateView(UpdateView):
 
     def get_success_url(self):
         """
-        Retorna a URL de sucesso após a atualização bem-sucedida.
+        Define a URL de sucesso após a atualização.
 
-        Returns:
-            str: A URL para os detalhes do carro atualizado.
+        Retorna:
+            str: URL para os detalhes do carro atualizado.
         """
         return reverse_lazy("car_detail", kwargs={"pk": self.object.pk})
 
@@ -185,13 +156,12 @@ class CarDeleteView(DeleteView):
     """
     View para deletar um carro existente.
 
-    Exibe um formulário de confirmação para deletar um carro e redireciona para a lista de carros após a exclusão.
-    É necessário que o usuário esteja autenticado para acessar a view, sendo redirecionado para a página de login se não estiver autenticado.
+    Requer que o usuário esteja autenticado.
 
     Atributos:
-        model (Model): O modelo de dados usado pela view.
-        template_name (str): O nome do template usado para renderizar a view.
-        success_url (str): A URL para a qual redirecionar após a exclusão bem-sucedida.
+        model (Model): Modelo de dados para o carro.
+        template_name (str): Template usado para confirmação de exclusão.
+        success_url (str): URL de redirecionamento após exclusão.
     """
 
     model = Car

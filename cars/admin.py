@@ -1,9 +1,13 @@
 """
-Configuração do Django Admin para os modelos Car e Brand.
+Administração do Django para Aplicação de Carros
 
-Includes:
-    - BrandAdmin: Configuração de exibição e busca para o modelo Brand.
-    - CarAdmin: Configuração de exibição e busca para o modelo Car.
+Este módulo registra e configura os modelos 'Brand' e 'Car' no site de administração do Django,
+permitindo uma interface de administração adequada.
+
+Dependências:
+-------------
+- django.contrib.admin: Módulo para registrar classes de administração no Django.
+- cars.models: Módulo contendo os modelos Car e Brand.
 """
 
 from django.contrib import admin

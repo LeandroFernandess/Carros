@@ -1,18 +1,31 @@
 """
-Configuração de URLs para o projeto app.
+Configuração de URLs para o projeto Django.
 
-A lista `urlpatterns` roteia URLs para views. Para mais informações, veja:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Exemplos:
-Views baseadas em funções
-    1. Adicione um import:  from my_app import views
-    2. Adicione uma URL ao urlpatterns:  path('', views.home, name='home')
-Views baseadas em classes
-    1. Adicione um import:  from other_app.views import Home
-    2. Adicione uma URL ao urlpatterns:  path('', Home.as_view(), name='home')
-Incluindo outra URLconf
-    1. Importe a função include: from django.urls import include, path
-    2. Adicione uma URL ao urlpatterns:  path('blog/', include('blog.urls'))
+Descrição:
+----------
+Define as rotas de URL e as vistas correspondentes para o projeto,
+incluindo a administração e a funcionalidade de gerenciamento de carros.
+
+Importações:
+------------
+- Admin do Django e configuração de URLs.
+- Configurações para servir arquivos estáticos/media.
+- Várias vistas para funcionalidades de carros e contas.
+
+Rotas:
+------
+- Admin: caminho para o painel de administração.
+- Register, Login, Logout: rotas para autenticação de usuários.
+- Cars (List, Create, Detail, Update, Delete): rotas para gerenciar carros.
+
+Notas:
+------
+- As rotas para servir arquivos estáticos são adicionadas se ativadas
+  nas configurações (usualmente em modo de debug).
+
+Autores:
+--------
+- Desenvolvido com base no framework Django.
 """
 
 from django.contrib import admin

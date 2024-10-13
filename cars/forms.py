@@ -1,8 +1,13 @@
 """
-Este módulo define um formulário para a aplicação de gerenciamento de carros.
+Car Model Form Module
 
-Includes:
-    - CarModelForm: Um formulário baseado no modelo Car, com validações adicionais para os campos 'value' e 'factory_year'.
+Este módulo define um formulário para o modelo Car, incluindo validações personalizadas
+para garantir a integridade dos dados ao criar ou atualizar instâncias de Car.
+
+Dependências:
+-------------
+- django.forms: Biblioteca do Django para criar formulários baseados em modelos.
+- cars.models.Car: O modelo de dados para carros utilizado no formulário.
 """
 
 from django import forms

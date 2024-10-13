@@ -1,47 +1,15 @@
-#!/usr/bin/env python
 """
-Django Management Utility Script
+Django Management Script
 
-Este script é utilizado como ponto de entrada para executar tarefas administrativas em 
-um projeto Django, como migrações de banco de dados, execução de servidores de desenvolvimento, 
-e outras funcionalidades fornecidas pelo Django através da linha de comando.
+Este script configura o ambiente Django e executa comandos de linha de comando utilizando o utilitário 
+`django.core.management.execute_from_command_line`. É uma parte essencial na administração de projetos 
+Django, permitindo a realização de diversas tarefas administrativas.
 
 Dependências:
 -------------
-- Django: Este script depende do framework Django, que deve estar instalado e disponível 
-  na variável de ambiente `PYTHONPATH`. Caso o Django não esteja instalado, o script lançará 
-  uma exceção `ImportError`.
-- Variável de ambiente `DJANGO_SETTINGS_MODULE`: O módulo de configuração do Django deve ser 
-  especificado como `app.settings` ou o nome equivalente do seu projeto.
-
-Fluxo de Execução:
-------------------
-1. Define a variável de ambiente `DJANGO_SETTINGS_MODULE`, que especifica o caminho para as 
-   configurações do projeto Django.
-2. Tenta importar o módulo `execute_from_command_line` do pacote `django.core.management`.
-3. Caso a importação falhe, lança uma exceção explicando possíveis problemas, como Django 
-   não estar instalado ou a falta de um ambiente virtual ativado.
-4. Executa a função `execute_from_command_line` passando os argumentos da linha de comando 
-   (`sys.argv`), permitindo que o usuário invoque comandos do Django via terminal.
-
-Funções:
---------
-- main(): Configura as variáveis de ambiente necessárias e executa os comandos administrativos 
-  do Django.
-
-Exemplo de Uso:
----------------
-Para executar comandos administrativos em um projeto Django, rode o script no terminal:
-    $ python manage.py runserver
-    $ python manage.py migrate
-
-Este script geralmente é chamado como `manage.py` na raiz de um projeto Django, mas pode ser 
-adaptado conforme necessário.
-
-Nota:
------
-Certifique-se de que o Django está instalado e que você está rodando o script dentro de um ambiente 
-virtual adequado para evitar problemas de importação.
+- os: Biblioteca padrão para interações com o sistema operacional.
+- sys: Biblioteca padrão para manipulação de argumentos e interação com o interpretador Python.
+- django.core.management: Módulo do Django contendo utilitários para gerenciamento de projeto.
 """
 
 import os
@@ -49,14 +17,26 @@ import sys
 
 
 def main():
+    """
+    Configura o ambiente para Django e executa comandos de linha de comando.
+
+    Define a variável de ambiente `DJANGO_SETTINGS_MODULE` com as configurações
+    do projeto Django e então executa `execute_from_command_line` com os
+    argumentos fornecidos via linha de comando.
+
+    Levanta:
+        ImportError: Se o Django não estiver instalado ou configurado corretamente,
+        o que pode ocorrer se as dependências não estiverem instaladas ou se um ambiente
+        virtual não estiver ativado.
+    """
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
-            """Não foi possível importar o Django. Você tem certeza de que ele está
-            instalado e disponível na variável de ambiente PYTHONPATH? Você 
-            esqueceu de ativar um ambiente virtual?"""
+            "Não foi possível importar o Django. Você tem certeza de que ele está "
+            "instalado e disponível na variável de ambiente PYTHONPATH? Você "
+            "esqueceu de ativar um ambiente virtual?"
         ) from exc
     execute_from_command_line(sys.argv)
 

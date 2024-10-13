@@ -1,23 +1,29 @@
 """
-Este módulo fornece views para registro, login e logout de usuários utilizando Django.
+Vistas de autenticação para um projeto Django.
 
-Views:
-    - register_view: Exibe o formulário de registro e cria um novo usuário se o formulário for válido.
-    - login_view: Exibe o formulário de login e autentica o usuário se as credenciais forem válidas.
-    - logout_view: Faz o logout do usuário atual e redireciona para a lista de carros.
+Descrição:
+----------
+Este módulo fornece vistas para registro, login e logout de usuários.
 
-Dependências:
-    - django.contrib.auth.forms.UserCreationForm: Formulário de criação de novos usuários.
-    - django.contrib.auth.forms.AuthenticationForm: Formulário de autenticação de usuários existentes.
-    - django.contrib.auth.authenticate: Função para autenticar um usuário com base em credenciais.
-    - django.contrib.auth.login: Função para logar um usuário autenticado.
-    - django.contrib.auth.logout: Função para deslogar o usuário atual.
-    - django.shortcuts.render: Renderiza um template com um contexto.
-    - django.shortcuts.redirect: Redireciona para outra URL.
-    - django.contrib.messages: Módulo para adicionar mensagens às respostas.
+Importações:
+------------
+- Formulários e funções de autenticação do Django.
+- Funções de gerenciamento de sessões e mensagens.
+- Utilidades para renderização de templates e redirecionamentos.
 
-Cada view trata uma funcionalidade específica para a autenticação de usuários e utiliza 
-os respectivos formulários e funções do Django para processar as requisições.
+Funções:
+--------
+- register_view: Lida com a criação de novos usuários.
+- login_view: Gerencia o processo de login de usuários existentes.
+- logout_view: Faz logout do usuário atual e redireciona para a página de listagem de carros.
+
+Notas:
+------
+- Mensagens de erro são exibidas para informar o usuário sobre falhas na autenticação.
+
+Autores:
+--------
+- Desenvolvido com base no framework Django.
 """
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -27,18 +33,7 @@ from django.contrib import messages
 
 
 def register_view(request):
-    """
-    Exibe um formulário de registro e cria um novo usuário se o formulário for válido.
-
-    Redireciona para a página de login após o sucesso.
-
-    Args:
-        request (HttpRequest): O objeto de requisição HTTP.
-
-    Returns:
-        HttpResponse: A resposta HTTP com a página de registro ou um redirecionamento para a
-        página de login.
-    """
+    # Gerencia o registro de novos usuários.
     if request.method == "POST":
         user_form = UserCreationForm(request.POST)
         if user_form.is_valid():
@@ -50,18 +45,7 @@ def register_view(request):
 
 
 def login_view(request):
-    """
-    Exibe um formulário de login e autentica o usuário se as credenciais forem válidas.
-
-    Redireciona para a lista de carros após o sucesso.
-
-    Args:
-        request (HttpRequest): O objeto de requisição HTTP.
-
-    Returns:
-        HttpResponse: A resposta HTTP com a página de login ou um redirecionamento para a lista
-        de carros.
-    """
+    # Lida com o processo de login.
     if request.method == "POST":
         login_form = AuthenticationForm(request, data=request.POST)
         if login_form.is_valid():
@@ -73,7 +57,6 @@ def login_view(request):
                 return redirect("cars_list")
         else:
             messages.error(request, "Usuário ou senha inválidos.")
-
         login_form = AuthenticationForm()
     else:
         login_form = AuthenticationForm()
@@ -81,14 +64,6 @@ def login_view(request):
 
 
 def logout_view(request):
-    """
-    Faz o logout do usuário atual e redireciona para a lista de carros.
-
-    Args:
-        request (HttpRequest): O objeto de requisição HTTP.
-
-    Returns:
-        HttpResponse: Um redirecionamento para a lista de carros.
-    """
+    # Faz logout do usuário e redireciona.
     logout(request)
     return redirect("cars_list")

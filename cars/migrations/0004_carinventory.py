@@ -1,16 +1,27 @@
-# Gerado por Django 5.0.7 em 2024-09-19 22:07
+"""
+Migração do Django para criar o modelo `CarInventory`.
+
+Detalhes da mudança:
+--------------------
+1. Criação do modelo `CarInventory`:
+   - Atributos:
+     - `id`: BigAutoField, chave primária automática.
+     - `cars_count`: IntegerField, armazena a quantidade de carros.
+     - `cars_value`: FloatField, armazena o valor total dos carros.
+     - `created_at`: DateTimeField, armazena a data de criação, preenchida automaticamente ao adicionar.
+
+2. Configuração de Ordenação:
+   - Os registros são ordenados por `created_at` em ordem decrescente.
+
+Autores:
+--------
+- Django 5.0.7: Geração automática em 19 de setembro de 2024.
+"""
 
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    """
-    Migração para criar o modelo CarInventory.
-
-    Esta migração cria um novo modelo chamado CarInventory, que mantém o controle
-    da quantidade e valor dos carros, juntamente com o timestamp de criação.
-    """
-
     dependencies = [
         ("cars", "0003_car_photo_car_plate"),
     ]
@@ -19,7 +30,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="CarInventory",
             fields=[
-                # Chave primária para o modelo, gerada automaticamente.
                 (
                     "id",
                     models.BigAutoField(
@@ -29,15 +39,11 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                # Campo inteiro para armazenar a quantidade de carros.
                 ("cars_count", models.IntegerField()),
-                # Campo float para armazenar o valor total dos carros.
                 ("cars_value", models.FloatField()),
-                # Campo DateTime para armazenar a data de criação, configurado automaticamente.
                 ("created_at", models.DateTimeField(auto_now_add=True)),
             ],
             options={
-                # Ordena pela data de criação em ordem decrescente.
                 "ordering": ["-created_at"],
             },
         ),
