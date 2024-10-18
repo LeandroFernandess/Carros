@@ -134,9 +134,3 @@ Para utilizar a funcionalidade de geração de descrições, você precisará co
 ## Contribuindo 🤝
 
 Contribuições são bem-vindas! Se você tiver sugestões ou encontrar problemas, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
-
-## Licença 📜
-
-Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
-
----
