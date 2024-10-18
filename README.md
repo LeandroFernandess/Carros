@@ -28,7 +28,6 @@ Django-Master-Carros/
 │   ├── apps.py
 │   └── views.py
 ├── app/
-│   ├── __pycache__/
 │   ├── static/app/
 │   │   ├── script/
 │   │   │   └── theme_toggle.js
