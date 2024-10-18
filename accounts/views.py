@@ -33,7 +33,22 @@ from django.contrib import messages
 
 
 def register_view(request):
-    # Gerencia o registro de novos usuários.
+    """
+    Lida com o registro de novos usuários.
+
+    Se o método da requisição for POST, tenta criar um novo usuário com base nos dados enviados.
+    Caso contrário, exibe o formulário de criação de usuário.
+
+    Parâmetros:
+    -----------
+    request : HttpRequest
+        O objeto da requisição HTTP.
+
+    Retorna:
+    --------
+    HttpResponse
+        Renderiza a página de registro ou redireciona para a listagem de carros após o registro bem-sucedido.
+    """
     if request.method == "POST":
         user_form = UserCreationForm(request.POST)
         if user_form.is_valid():
@@ -45,7 +60,22 @@ def register_view(request):
 
 
 def login_view(request):
-    # Lida com o processo de login.
+    """
+    Gerencia o processo de login de usuários existentes.
+
+    Se o método da requisição for POST, tenta autenticar o usuário com os dados fornecidos.
+    Caso contrário, exibe o formulário de login. Em caso de falha, uma mensagem de erro é mostrada.
+
+    Parâmetros:
+    -----------
+    request : HttpRequest
+        O objeto da requisição HTTP.
+
+    Retorna:
+    --------
+    HttpResponse
+        Renderiza a página de login ou redireciona para a listagem de carros após o login bem-sucedido.
+    """
     if request.method == "POST":
         login_form = AuthenticationForm(request, data=request.POST)
         if login_form.is_valid():
@@ -64,6 +94,20 @@ def login_view(request):
 
 
 def logout_view(request):
-    # Faz logout do usuário e redireciona.
+    """
+    Faz logout do usuário atual.
+
+    Desconecta o usuário atual e redireciona para a página de listagem de carros.
+
+    Parâmetros:
+    -----------
+    request : HttpRequest
+        O objeto da requisição HTTP.
+
+    Retorna:
+    --------
+    HttpResponse
+        Redireciona para a página de listagem de carros após o logout.
+    """
     logout(request)
     return redirect("cars_list")

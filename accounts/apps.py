@@ -23,7 +23,19 @@ from django.apps import AppConfig
 
 
 class AccountsConfig(AppConfig):
-    """Configurações do aplicativo 'accounts'."""
+    """
+    Configurações do aplicativo 'accounts'.
+
+    Define configurações específicas para o aplicativo, como o tipo de campo padrão
+    para chaves primárias e o nome do aplicativo.
+
+    Atributos:
+    ----------
+    default_auto_field : str
+        Especifica o campo padrão para chaves primárias em novos modelos ('BigAutoField').
+    name : str
+        O nome do aplicativo ('accounts').
+    """
 
     default_auto_field = "django.db.models.BigAutoField"
     name = "accounts"
