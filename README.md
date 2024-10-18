@@ -28,6 +28,24 @@ Django-Master-Carros/
 │   ├── apps.py
 │   └── views.py
 ├── app/
+│   ├── __pycache__/
+│   ├── static/app/
+│   │   ├── script/
+│   │   │   └── theme_toggle.js
+│   │   └── styles/
+│   │       ├── base.css
+│   │       ├── cars.css
+│   │       ├── cars_delete.css
+│   │       ├── cars_detail.css
+│   │       ├── cars_update.css
+│   │       └── new_car.css
+│   ├── templates/
+│   │   └── base.html
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 ├── cars/
 │   ├── migrations/
 │   ├── templates/
