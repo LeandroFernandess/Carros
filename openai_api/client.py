@@ -9,7 +9,7 @@ Dependências:
 -------------
 - openai: Biblioteca para acessar a API da OpenAI.
 - os: Biblioteca padrão para acessar variáveis de ambiente.
-- dotenv: Biblioteca para carregar variáveis de ambiente de um arquivo .env.
+- dotenv: Biblioteca para carregar variáveis de ambiente de um arquivo .env
 """
 
 import openai

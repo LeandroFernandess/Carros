@@ -1,7 +1,7 @@
 """
 Configurações do Django para o projeto app.
 
-Gerado por 'django-admin startproject' usando Django 5.0.7.
+Gerado por 'django-admin startproject' usando Django 5.0.7
 
 Para mais informações sobre este arquivo, veja
 https://docs.djangoproject.com/en/5.0/topics/settings/

@@ -2,62 +2,63 @@
 {% load static %}
 <!-- Define o bloco de conteúdo principal do template. Esse bloco substituirá o conteúdo correspondente em "base.html". -->
 {% block content %}
-    <!-- Link para arquivo CSS externo -->
-    <link rel="stylesheet" type="text/css" href="{% static 'accounts/styles.css' %}">
+<!-- Link para arquivo CSS externo -->
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/styles.css' %}">
 
-    <!-- Container principal -->
-    <div class="container">
-        
-        <!-- Divisão esquerda com a imagem de fundo -->
-        <div class="left-side">
-            <!-- Imagem de fundo aplicada via CSS -->
-        </div>
-        
-        <!-- Divisão direita com o formulário de login -->
-        <div class="right-side">
-            <div class="form-container">
-                
-                <!-- Resumo e boas-vindas -->
-                <div class="summary">
-                    <h2>Bem-vindo ao CarDeal</h2>
-                    <p>Sistema de revenda de carros. Realize seu login ou crie uma nova conta para acessar nossas funcionalidades e comece a anunciar agora mesmo!</p>
-                </div>
-                
-                <!-- Exibir mensagens de erro, se houver -->
-                {% if messages %}
-                    <div class="error-message">
-                        {% for message in messages %}
-                            <p>{{ message }}</p>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+<!-- Container principal -->
+<div class="container">
 
-                <!-- Formulário de login -->
-                <form method="post">
-                    {% csrf_token %}
-                    
-                    <!-- Campos do formulário de login renderizados como parágrafos -->
-                    <table>
-                        {{ login_form.as_p }}
-                    </table>
-                    
-                    <!-- Botão de submissão do formulário -->
-                    <input type="submit" value="Entrar">
-                    
-                    <!-- Link para criação de nova conta -->
-                    <div class="register-link">
-                        <p>Não tem uma conta?</p>
-                        <a href="{% url 'register' %}">Crie sua conta</a>
-                    </div>
+    <!-- Divisão esquerda com a imagem de fundo -->
+    <div class="left-side">
+        <!-- Imagem de fundo aplicada via CSS -->
+    </div>
 
-                    <!-- Link para visualização dos carros anunciados -->
-                    <div class="cars-list">
-                        <p>Não deseja criar uma conta ou efetuar login?</p>
-                        <a href="{% url 'cars_list' %}">Veja os carros já anunciados</a>
-                    </div>
-                </form>
-                
+    <!-- Divisão direita com o formulário de login -->
+    <div class="right-side">
+        <div class="form-container">
+
+            <!-- Resumo e boas-vindas -->
+            <div class="summary">
+                <h2>Bem-vindo ao CarDeal</h2>
+                <p>Sistema de revenda de carros. Realize seu login ou crie uma nova conta para acessar nossas
+                    funcionalidades e comece a anunciar agora mesmo!</p>
             </div>
+
+            <!-- Exibir mensagens de erro, se houver -->
+            {% if messages %}
+            <div class="error-message">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Formulário de login -->
+            <form method="post">
+                {% csrf_token %}
+
+                <!-- Campos do formulário de login renderizados como parágrafos -->
+                <table>
+                    {{ login_form.as_p }}
+                </table>
+
+                <!-- Botão de submissão do formulário -->
+                <input type="submit" value="Entrar">
+
+                <!-- Link para criação de nova conta -->
+                <div class="register-link">
+                    <p>Não tem uma conta?</p>
+                    <a href="{% url 'register' %}">Crie sua conta</a>
+                </div>
+
+                <!-- Link para visualização dos carros anunciados -->
+                <div class="cars-list">
+                    <p>Não deseja criar uma conta ou efetuar login?</p>
+                    <a href="{% url 'cars_list' %}">Veja os carros já anunciados</a>
+                </div>
+            </form>
+
         </div>
     </div>
+</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 """
-Migração do Django para criar o modelo `CarInventory`.
+Migração do Django para criar o modelo `CarInventory`
 
 Detalhes da mudança:
 --------------------

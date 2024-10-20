@@ -7,7 +7,7 @@ para garantir a integridade dos dados ao criar ou atualizar instâncias de Car.
 Dependências:
 -------------
 - django.forms: Biblioteca do Django para criar formulários baseados em modelos.
-- cars.models.Car: O modelo de dados para carros utilizado no formulário.
+- cars.models.Car: O modelo de dados para carros utilizado no formulário
 """
 
 from django import forms

@@ -2,161 +2,178 @@
    ESTILOS GERAIS
 ======================= */
 /* Remove margens e espaçamentos padrão, define altura total e oculta rolagem */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  /* =======================
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* =======================
      CONTAINER PRINCIPAL
   ======================= */
-  /* Configura o container principal com flexbox e oculta a rolagem */
-  .container {
-    display: flex;
-    height: 100vh; /* Faz o container ocupar a altura total da viewport */
-    overflow: hidden; /* Evita barra de rolagem */
-  }
-  
-  /* =======================
+/* Configura o container principal com flexbox e oculta a rolagem */
+.container {
+  display: flex;
+  height: 100vh;
+  /* Faz o container ocupar a altura total da viewport */
+  overflow: hidden;
+  /* Evita barra de rolagem */
+}
+
+/* =======================
      SEÇÃO ESQUERDA
   ======================= */
-  /* Define a seção esquerda com uma imagem de fundo */
-  .left-side {
-    flex: 1;
-    background-image: url(back_ground_login.png);
-    background-size: cover; /* Garante que a imagem cubra toda a área do container */
-    background-position: center;
-  }
-  
-  /* =======================
+/* Define a seção esquerda com uma imagem de fundo */
+.left-side {
+  flex: 1;
+  background-image: url(back_ground_login.png);
+  background-size: cover;
+  /* Garante que a imagem cubra toda a área do container */
+  background-position: center;
+}
+
+/* =======================
      SEÇÃO DIREITA
   ======================= */
-  /* Define a seção direita com um fundo claro e centraliza o conteúdo */
-  .right-side {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f1f1f1;
-    padding: 20px;
-    overflow: hidden; /* Permite rolagem apenas na parte do formulário, se necessário */
-  }
-  
-  /* =======================
+/* Define a seção direita com um fundo claro e centraliza o conteúdo */
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 20px;
+  overflow: hidden;
+  /* Permite rolagem apenas na parte do formulário, se necessário */
+}
+
+/* =======================
      CONTAINER DO FORMULÁRIO
   ======================= */
-  /* Configura o container do formulário */
-  .form-container {
-    width: 100%;
-    max-width: 600px; /* Tamanho máximo do formulário */
-    background-color: #fff;
-    padding: 30px; /* Ajusta o padding */
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* =======================
+/* Configura o container do formulário */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  /* Tamanho máximo do formulário */
+  background-color: #fff;
+  padding: 30px;
+  /* Ajusta o padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================
      ESTILOS DO FORMULÁRIO
   ======================= */
-  /* Configura a tabela no formulário */
-  .form-container table {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  /* Estilos para campos de text e password */
-  .form-container input[type="text"],
-  .form-container input[type="password"] {
-    width: 100%;
-    padding: 12px 20px; /* Aumenta o padding dos campos */
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 18px; /* Aumenta o tamanho da fonte dos campos */
-  }
-  
-  /* Estilos para o botão de submit */
-  .form-container input[type="submit"] {
-    background-color: #61768b;
-    color: #ffffff;
-    border: none;
-    padding: 10px 10px; /* Aumenta o padding do botão */
-    font-size: 18px; /* Aumenta o tamanho da fonte do botão */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    width: 100%; /* Faz o botão ocupar toda a largura do formulário */
-  }
-  
-  /* Muda a cor do fundo ao passar o mouse sobre o botão */
-  .form-container input[type="submit"]:hover {
-    background-color: #3c5771;
-  }
-  
-  /* =======================
+/* Configura a tabela no formulário */
+.form-container table {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Estilos para campos de text e password */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  /* Aumenta o padding dos campos */
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+  /* Aumenta o tamanho da fonte dos campos */
+}
+
+/* Estilos para o botão de submit */
+.form-container input[type="submit"] {
+  background-color: #61768b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 10px;
+  /* Aumenta o padding do botão */
+  font-size: 18px;
+  /* Aumenta o tamanho da fonte do botão */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+  /* Faz o botão ocupar toda a largura do formulário */
+}
+
+/* Muda a cor do fundo ao passar o mouse sobre o botão */
+.form-container input[type="submit"]:hover {
+  background-color: #3c5771;
+}
+
+/* =======================
      MEDIA QUERIES
   ======================= */
-  /* Ajustes para telas menores */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-  
-    .left-side {
-      height: 80vh;
-      background-size: cover; /* Certifica-se de que a imagem cubra esta área menor também */
-    }
-  
-    .right-side {
-      height: 50vh;
-      justify-content: flex-start;
-      padding: 20px;
-    }
-  
-    .form-container {
-      max-width: 100%;
-    }
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
-  
-  /* =======================
+
+  .left-side {
+    height: 80vh;
+    background-size: cover;
+    /* Certifica-se de que a imagem cubra esta área menor também */
+  }
+
+  .right-side {
+    height: 50vh;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .form-container {
+    max-width: 100%;
+  }
+}
+
+/* =======================
      OUTROS ESTILOS
   ======================= */
-  /* Estilos para o resumo no formulário */
-  .form-container .summary {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
-  /* Estilos para links de registro e lista de carros */
-  .form-container .register-link,
-  .form-container .cars-list {
-    display: flex;
-    justify-content: flex-start; /* Alinha o texto à esquerda e o link à direita */
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .form-container a {
-    margin-left: 10px;
-    text-decoration: none; /* Remove o sublinhado */
-    color: #626262; /* Define uma nova cor para os links */
-    font-weight: bold;
-  }
-  
-  /* Muda a cor do link ao passar o mouse */
-  .form-container a:hover {
-    color: #000000; /* Define uma cor diferente ao passar o mouse */
-    text-decoration: underline; /* Opcional, adiciona sublinhado ao passar o mouse */
-  }
-  
-  /* Estilos para mensagens de erro */
-  .error-message {
-    color: red;
-    text-align: center;
-  }
-  
+/* Estilos para o resumo no formulário */
+.form-container .summary {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Estilos para links de registro e lista de carros */
+.form-container .register-link,
+.form-container .cars-list {
+  display: flex;
+  justify-content: flex-start;
+  /* Alinha o texto à esquerda e o link à direita */
+  align-items: center;
+  margin-top: 10px;
+}
+
+.form-container a {
+  margin-left: 10px;
+  text-decoration: none;
+  /* Remove o sublinhado */
+  color: #626262;
+  /* Define uma nova cor para os links */
+  font-weight: bold;
+}
+
+/* Muda a cor do link ao passar o mouse */
+.form-container a:hover {
+  color: #000000;
+  /* Define uma cor diferente ao passar o mouse */
+  text-decoration: underline;
+  /* Opcional, adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilos para mensagens de erro */
+.error-message {
+  color: red;
+  text-align: center;
+}

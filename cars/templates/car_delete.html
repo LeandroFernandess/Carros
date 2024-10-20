@@ -12,30 +12,30 @@
 
 <!-- Define o bloco de conteúdo principal do template. Esse bloco substituirá o conteúdo correspondente em "base.html". -->
 {% block content %}
-  <!-- Card para confirmação de exclusão de carro, estruturando o conteúdo da página -->
-  <div class="card">
-    <!-- Cabeçalho do card, contendo o título -->
-    <div class="card-header">
-      <h1 class="card-title">Deletar Carro</h1>
-    </div>
-    <!-- Corpo do card, contendo a mensagem de confirmação -->
-    <div class="card-body">
-      <!-- Mensagem que pergunta ao usuário se deseja realmente deletar o carro especificado -->
-      <p>Tem certeza que deseja deletar o carro <strong>{{ object.brand }} {{ object.model }}</strong>?</p>
-      <!-- Aviso de que a ação não pode ser desfeita, destacado em estilo de aviso -->
-      <p class="warning-message">Esta ação é irreversível. Por favor, confirme se deseja prosseguir.</p>
-      <!-- Formulário para confirmação de exclusão, usando método POST para segurança -->
-      <form method="post">
-        <!-- Tag de segurança do Django para evitar ataques CSRF. Obrigatória em formulários POST. -->
-        {% csrf_token %}
-        <!-- Contêiner para os botões de ação do formulário -->
-        <div class="buttons-container">
-          <!-- Botão para confirmar a exclusão, classificado como ação de perigo -->
-          <button type="submit" class="btn btn-danger">Deletar Carro</button>
-          <!-- Link para cancelar a ação e voltar à lista de carros -->
-          <a href="{% url 'cars_list' %}" class="btn btn-secondary">Cancelar</a>
-        </div>
-      </form>
-    </div>
+<!-- Card para confirmação de exclusão de carro, estruturando o conteúdo da página -->
+<div class="card">
+  <!-- Cabeçalho do card, contendo o título -->
+  <div class="card-header">
+    <h1 class="card-title">Deletar Carro</h1>
   </div>
+  <!-- Corpo do card, contendo a mensagem de confirmação -->
+  <div class="card-body">
+    <!-- Mensagem que pergunta ao usuário se deseja realmente deletar o carro especificado -->
+    <p>Tem certeza que deseja deletar o carro <strong>{{ object.brand }} {{ object.model }}</strong>?</p>
+    <!-- Aviso de que a ação não pode ser desfeita, destacado em estilo de aviso -->
+    <p class="warning-message">Esta ação é irreversível. Por favor, confirme se deseja prosseguir.</p>
+    <!-- Formulário para confirmação de exclusão, usando método POST para segurança -->
+    <form method="post">
+      <!-- Tag de segurança do Django para evitar ataques CSRF. Obrigatória em formulários POST. -->
+      {% csrf_token %}
+      <!-- Contêiner para os botões de ação do formulário -->
+      <div class="buttons-container">
+        <!-- Botão para confirmar a exclusão, classificado como ação de perigo -->
+        <button type="submit" class="btn btn-danger">Deletar Carro</button>
+        <!-- Link para cancelar a ação e voltar à lista de carros -->
+        <a href="{% url 'cars_list' %}" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}

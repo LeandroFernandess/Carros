@@ -1,5 +1,5 @@
 """
-Configuração ASGI para o projeto app.
+Configuração ASGI para o projeto app
 
 Expõe o ASGI callable como uma variável de nível de módulo chamada ``application``.
 

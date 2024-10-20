@@ -2,7 +2,7 @@
 Administração do Django para Aplicação de Carros
 
 Este módulo registra e configura os modelos 'Brand' e 'Car' no site de administração do Django,
-permitindo uma interface de administração adequada.
+permitindo uma interface de administração adequada
 
 Dependências:
 -------------

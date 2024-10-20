@@ -7,7 +7,7 @@ de veículos no sistema.
 
 Dependências:
 -------------
-- django.db.models: Biblioteca de ORM do Django utilizada para definir os modelos.
+- django.db.models: Biblioteca de ORM do Django utilizada para definir os modelos
 """
 
 from django.db import models

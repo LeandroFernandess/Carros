@@ -1,5 +1,5 @@
 """
-Migração do Django para adicionar campos `photo` e `plate` ao modelo `Car`.
+Migração do Django para adicionar campos `photo` e `plate` ao modelo `Car`
 
 Esta migração faz as seguintes alterações no modelo `Car`:
 1. Adição de um campo `photo` para armazenar imagens.

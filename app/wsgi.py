@@ -1,5 +1,5 @@
 """
-Configuração WSGI para o projeto Django.
+Configuração WSGI para o projeto Django
 
 Descrição:
 ----------

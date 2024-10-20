@@ -1,5 +1,5 @@
 """
-Migração do Django para criação do modelo `Car`.
+Migração do Django para criação do modelo 'Car'
 
 Esta migração inicial cria a tabela `Car` com os campos definidos.
 

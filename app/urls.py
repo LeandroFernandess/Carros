@@ -1,5 +1,5 @@
 """
-Configuração de URLs para o projeto Django.
+Configuração de URLs para o projeto Django
 
 Descrição:
 ----------

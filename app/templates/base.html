@@ -1,79 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Declaração de codificação de caracteres -->
-  <meta charset="UTF-8">
-  
-  <!-- Configuração para responsividade em dispositivos móveis -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Carrega a tag 'static' do Django para incluir arquivos estáticos -->
-  {% load static %}
 
-  <!-- Link para estilos CSS externos do arquivo base -->
-  <link rel="stylesheet" type="text/css" href="{% static 'app/styles/base.css' %}">
+  <head>
+    <!-- Declaração de codificação de caracteres -->
+    <meta charset="UTF-8">
 
-  <!-- Inclui fonte externa do Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Configuração para responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Inclui ícones do Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
-  
-  <!-- Bloco para estilos CSS adicionais, específico para cada template -->
-  {% block extra_styles %}{% endblock %}
-  
-  <!-- Título da página, substituível por blocos -->
-  <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-  <!-- Div que encapsula o conteúdo principal da página -->
-  <div class="content">
-    <header>
-      <nav>
-        <!-- Mensagem de boas-vindas para usuários autenticados -->
-        <div class="welcome-message">
-          {% if user.is_authenticated %}
+    <!-- Carrega a tag 'static' do Django para incluir arquivos estáticos -->
+    {% load static %}
+
+    <!-- Link para estilos CSS externos do arquivo base -->
+    <link rel="stylesheet" type="text/css" href="{% static 'app/styles/base.css' %}">
+
+    <!-- Inclui fonte externa do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Inclui ícones do Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+      rel="stylesheet">
+
+    <!-- Bloco para estilos CSS adicionais, específico para cada template -->
+    {% block extra_styles %}{% endblock %}
+
+    <!-- Título da página, substituível por blocos -->
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <!-- Div que encapsula o conteúdo principal da página -->
+    <div class="content">
+      <header>
+        <nav>
+          <!-- Mensagem de boas-vindas para usuários autenticados -->
+          <div class="welcome-message">
+            {% if user.is_authenticated %}
             <li>Olá, {{ user.username }}, bem vindo ao CarDeal!</li>
-          {% endif %}
-        </div>
-        
-        <!-- Botão para alternar entre temas claro e escuro -->
-        <button id="theme-toggle">
-          <i id="theme-icon" class="bi bi-moon-fill"></i>
-        </button>
-        
-        <ul>
-          <!-- Links de navegação, variam conforme estado de autenticação do usuário -->
-          {% if user.is_authenticated %}
+            {% endif %}
+          </div>
+
+          <!-- Botão para alternar entre temas claro e escuro -->
+          <button id="theme-toggle">
+            <i id="theme-icon" class="bi bi-moon-fill"></i>
+          </button>
+
+          <ul>
+            <!-- Links de navegação, variam conforme estado de autenticação do usuário -->
+            {% if user.is_authenticated %}
             <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
-          {% else %}
+            {% else %}
             <li><a href="{% url 'register' %}">Registrar</a></li>
             <li><a href="{% url 'login' %}">Entrar</a></li>
-          {% endif %}
-          <li><a href="{% url 'cars_list' %}">Lista de carros</a></li>
-          {% if user.is_authenticated %}
+            {% endif %}
+            <li><a href="{% url 'cars_list' %}">Lista de carros</a></li>
+            {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Sair</a></li>
-          {% endif %}
-        </ul>
-      </nav>
-    </header>
+            {% endif %}
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <!-- Bloco substituível de conteúdo principal, conforme o template específico -->
-      {% block content %}
-      {% endblock %}
-    </main>
-  </div>
+      <main>
+        <!-- Bloco substituível de conteúdo principal, conforme o template específico -->
+        {% block content %}
+        {% endblock %}
+      </main>
+    </div>
 
-  <footer class="footer">
-    <p>&copy; 2024 CarDeal. Todos os direitos reservados. |
-      <!-- Links externos para contato profissional e informações do projeto -->
-      <a href="https://www.linkedin.com/in/leandro-fernandes-951ab3189/" target="_blank" rel="noopener noreferrer">Contato profissional</a> |
-      <a href="https://github.com/LeandroFernandess/Carros" target="_blank" rel="noopener noreferrer">Confira como o projeto foi construído</a>
-    </p>
-  </footer>
+    <footer class="footer">
+      <p>&copy; 2024 CarDeal. Todos os direitos reservados. |
+        <!-- Links externos para contato profissional e informações do projeto -->
+        <a href="https://www.linkedin.com/in/leandro-fernandes-951ab3189/" target="_blank"
+          rel="noopener noreferrer">Contato profissional</a> |
+        <a href="https://github.com/LeandroFernandess/Carros" target="_blank" rel="noopener noreferrer">Confira como o
+          projeto foi construído</a>
+      </p>
+    </footer>
 
-  <!-- Script para gerenciar a funcionalidade de alternância de tema -->
-  <script src="{% static 'app/script/theme_toggle.js' %}"></script>
-</body>
+    <!-- Script para gerenciar a funcionalidade de alternância de tema -->
+    <script src="{% static 'app/script/theme_toggle.js' %}"></script>
+  </body>
+
 </html>

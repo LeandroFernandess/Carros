@@ -9,7 +9,7 @@ Dependências:
 -------------
 - os: Biblioteca padrão para interações com o sistema operacional.
 - sys: Biblioteca padrão para manipulação de argumentos e interação com o interpretador Python.
-- django.core.management: Módulo do Django contendo utilitários para gerenciamento de projeto.
+- django.core.management: Módulo do Django contendo utilitários para gerenciamento de projeto
 """
 
 import os

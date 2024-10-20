@@ -12,7 +12,7 @@ Dependências:
 - django.dispatch.receiver: Decorador usado para associar funções aos sinais.
 - cars.models.Car: O modelo de dados para carros.
 - cars.models.CarInventory: Modelo de dados para manter o inventário de carros.
-- openai_api.client.get_car_ai_bio: Função para gerar uma bio do carro utilizando a API da OpenAI.
+- openai_api.client.get_car_ai_bio: Função para gerar uma bio do carro utilizando a API da OpenAI
 """
 
 from django.db.models.signals import post_save, post_delete, pre_save

@@ -134,7 +134,7 @@ class CarUpdateView(UpdateView):
     Atributos:
         model (Model): Modelo de dados para o carro.
         form_class (Form): Formulário para atualização de carros.
-        template_name (str): Template usado para o formulário de atualização.
+        template_name (str): Template usado para o formulário de atualização
     """
 
     model = Car

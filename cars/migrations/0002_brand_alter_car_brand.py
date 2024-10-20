@@ -1,5 +1,5 @@
 """
-Migração do Django para criar o modelo `Brand` e alterar o campo `brand` no modelo `Car`.
+Migração do Django para criar o modelo `Brand` e alterar o campo `brand` no modelo `Car`
 
 Esta migração faz duas alterações principais:
 1. Criação da tabela `Brand` com um campo de nome.

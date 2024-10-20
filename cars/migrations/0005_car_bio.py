@@ -1,5 +1,5 @@
 """
-Migração do Django para o aplicativo 'cars'.
+Migração do Django para o aplicativo 'cars'
 
 Detalhes da mudança:
 --------------------

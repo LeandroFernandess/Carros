@@ -14,36 +14,36 @@
 {% block content %}
 <!-- Formulário de edição de carro, usando método POST para envio de dados. enctype é usado para upload de arquivos. -->
 <form method="post" enctype="multipart/form-data">
-  <!-- Tag de segurança do Django para evitar ataques CSRF. Obrigatória em formulários POST. -->
-  {% csrf_token %}
-  <!-- Título do formulário. -->
-  <h2>Editar Carro</h2>
-  <div>
-      <!-- Loop através dos campos do formulário Django. -->
-      {% for field in form %}
-          <!-- Contêiner para cada campo, ajudando o layout e estilos individuais. -->
-          <div class="form-group">
-              <!-- Renderiza o label associado ao campo do formulário. -->
-              {{ field.label_tag }}
-              <!-- Renderiza o próprio campo do formulário (input, select, etc.). -->
-              {{ field }}
-              <!-- Verifica se o campo possui erros de validação. -->
-              {% if field.errors %}
-                  <!-- Exibe as mensagens de erro, se existirem. -->
-                  <div class="error-message">{{ field.errors }}</div>
-              {% endif %}
-          </div>
-      {% endfor %}
-  </div>
-  <!-- Contêiner para os botões de ação do formulário. -->
-  <div class="buttons-container">
-      <!-- Botão para submeter o formulário e salvar alterações. -->
-      <input type="submit" value="Salvar Alterações" class="btn btn-primary">
-      <!-- Link que redireciona para a página de exclusão de carro, usando a primary key do objeto. -->
-      <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar Carro</a>
-      <!-- Link que redireciona para a página que lista todos os carros. -->
-      <a href="{% url 'cars_list' %}" class="btn btn-secondary">Cancelar</a>
-  </div>
+    <!-- Tag de segurança do Django para evitar ataques CSRF. Obrigatória em formulários POST. -->
+    {% csrf_token %}
+    <!-- Título do formulário. -->
+    <h2>Editar Carro</h2>
+    <div>
+        <!-- Loop através dos campos do formulário Django. -->
+        {% for field in form %}
+        <!-- Contêiner para cada campo, ajudando o layout e estilos individuais. -->
+        <div class="form-group">
+            <!-- Renderiza o label associado ao campo do formulário. -->
+            {{ field.label_tag }}
+            <!-- Renderiza o próprio campo do formulário (input, select, etc.). -->
+            {{ field }}
+            <!-- Verifica se o campo possui erros de validação. -->
+            {% if field.errors %}
+            <!-- Exibe as mensagens de erro, se existirem. -->
+            <div class="error-message">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Contêiner para os botões de ação do formulário. -->
+    <div class="buttons-container">
+        <!-- Botão para submeter o formulário e salvar alterações. -->
+        <input type="submit" value="Salvar Alterações" class="btn btn-primary">
+        <!-- Link que redireciona para a página de exclusão de carro, usando a primary key do objeto. -->
+        <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar Carro</a>
+        <!-- Link que redireciona para a página que lista todos os carros. -->
+        <a href="{% url 'cars_list' %}" class="btn btn-secondary">Cancelar</a>
+    </div>
 </form>
 
 {% endblock %}

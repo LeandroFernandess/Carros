@@ -37,7 +37,7 @@ def register_view(request):
     Lida com o registro de novos usuários.
 
     Se o método da requisição for POST, tenta criar um novo usuário com base nos dados enviados.
-    Caso contrário, exibe o formulário de criação de usuário.
+    Caso contrário, exibe o formulário de criação de usuário
 
     Parâmetros:
     -----------

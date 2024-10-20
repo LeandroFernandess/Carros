@@ -1,14 +1,19 @@
 /* ========================
    Estilização do Container da Grade de Cartões
    ======================== */
-   .content .car-grid {
+.content .car-grid {
     /* Define um layout de grade responsivo e centralizado */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Colunas flexíveis com largura mínima */
-    gap: 20px; /* Espaçamento entre os cartões */
-    margin: 0 auto; /* Centraliza o grid horizontalmente */
-    max-width: 1200px; /* Limite de largura máxima */
-    padding: 20px; /* Espaço interno ao redor do grid */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    /* Colunas flexíveis com largura mínima */
+    gap: 20px;
+    /* Espaçamento entre os cartões */
+    margin: 0 auto;
+    /* Centraliza o grid horizontalmente */
+    max-width: 1200px;
+    /* Limite de largura máxima */
+    padding: 20px;
+    /* Espaço interno ao redor do grid */
 }
 
 /* ========================
@@ -16,13 +21,20 @@
    ======================== */
 .content .car-card {
     /* Estilos visuais dos cartões, incluindo sombras e transições */
-    background-color: #a3a3a3; /* Cor de fundo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
-    border-radius: 8px; /* Cantos arredondados */
-    overflow: hidden; /* Impede o estouro de conteúdo */
-    text-align: center; /* Centraliza o texto */
-    transition: all 0.3s ease; /* Transição suave para mudanças no cartão */
-    padding: 20px; /* Espaçamento interno */
+    background-color: #a3a3a3;
+    /* Cor de fundo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para efeito de elevação */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    overflow: hidden;
+    /* Impede o estouro de conteúdo */
+    text-align: center;
+    /* Centraliza o texto */
+    transition: all 0.3s ease;
+    /* Transição suave para mudanças no cartão */
+    padding: 20px;
+    /* Espaçamento interno */
 }
 
 /* ========================
@@ -30,9 +42,12 @@
    ======================== */
 .content .car-card img {
     /* Define o comportamento e proporção da imagem nos cartões */
-    width: 100%; /* Largura total do cartão */
-    height: 200px; /* Altura fixa */
-    object-fit: cover; /* Cobertura sem distorção */
+    width: 100%;
+    /* Largura total do cartão */
+    height: 200px;
+    /* Altura fixa */
+    object-fit: cover;
+    /* Cobertura sem distorção */
 }
 
 /* ========================
@@ -40,8 +55,10 @@
    ======================== */
 .content .car-card h2 {
     /* Define o estilo visual dos títulos */
-    font-size: 1.4rem; /* Tamanho da fonte */
-    margin: 10px 0; /* Espaçamento acima e abaixo do título */
+    font-size: 1.4rem;
+    /* Tamanho da fonte */
+    margin: 10px 0;
+    /* Espaçamento acima e abaixo do título */
 }
 
 /* ========================
@@ -49,8 +66,10 @@
    ======================== */
 .content .car-card p {
     /* Controla o espaçamento e tamanho do texto nos cartões */
-    font-size: 1rem; /* Tamanho da fonte */
-    margin-bottom: 10px; /* Espaçamento inferior */
+    font-size: 1rem;
+    /* Tamanho da fonte */
+    margin-bottom: 10px;
+    /* Espaçamento inferior */
 }
 
 /* ========================
@@ -59,7 +78,8 @@
 @media (max-width: 768px) {
     .content .car-grid {
         /* Adapta o layout da grade para telas menores */
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajuste para dispositivos móveis */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        /* Ajuste para dispositivos móveis */
     }
 
     .content form {
@@ -74,52 +94,77 @@
 .content form {
     /* Estrutura do formulário para centralização e alinhamento vertical */
     display: flex;
-    justify-content: center; /* Centraliza o formulário horizontalmente */
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
-    margin-bottom: 20px; /* Espaçamento inferior do formulário */
-    padding: 10px; /* Espaçamento interno */
-    gap: 10px; /* Espaçamento uniforme entre os elementos */
-    text-align: center; /* Centraliza o texto */
+    justify-content: center;
+    /* Centraliza o formulário horizontalmente */
+    flex-wrap: wrap;
+    /* Permite quebra de linha em telas menores */
+    margin-bottom: 20px;
+    /* Espaçamento inferior do formulário */
+    padding: 10px;
+    /* Espaçamento interno */
+    gap: 10px;
+    /* Espaçamento uniforme entre os elementos */
+    text-align: center;
+    /* Centraliza o texto */
 }
 
 /* ========================
    Campo de Texto e Seletores do Formulário
    ======================== */
-.content input[type="text"], .content select {
+.content input[type="text"],
+.content select {
     /* Estilos para o campo de entrada de texto e seletores */
     width: 100%;
-    max-width: 200px; /* Limita a largura máxima */
+    max-width: 200px;
+    /* Limita a largura máxima */
     padding: 10px;
-    font-size: 14px; /* Tamanho da fonte */
-    border: 1px solid #ccc; /* Borda do campo */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: border-color 0.3s ease; /* Transição suave na borda */
+    font-size: 14px;
+    /* Tamanho da fonte */
+    border: 1px solid #ccc;
+    /* Borda do campo */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    transition: border-color 0.3s ease;
+    /* Transição suave na borda */
 }
 
 /* Efeito de foco nos campos de texto e seletores */
-.content input[type="text"]:focus, .content select:focus {
-    border-color: #0096c7; /* Cor de destaque ao focar */
+.content input[type="text"]:focus,
+.content select:focus {
+    border-color: #0096c7;
+    /* Cor de destaque ao focar */
     outline: none;
 }
 
 /* ========================
    Botão de Submissão do Formulário
    ======================== */
-.content button[type="submit"], .content .all-cars-button {
+.content button[type="submit"],
+.content .all-cars-button {
     /* Estilização do botão de envio e botão para mostrar todos os carros */
-    background-color: #61768b; /* Cor de fundo */
-    color: #fff; /* Cor do texto */
-    border: none; /* Remoção da borda padrão */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 14px; /* Tamanho da fonte */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Indicação de botão clicável */
-    transition: background-color 0.3s ease; /* Transição suave para mudanças de cor */
+    background-color: #61768b;
+    /* Cor de fundo */
+    color: #fff;
+    /* Cor do texto */
+    border: none;
+    /* Remoção da borda padrão */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    font-size: 14px;
+    /* Tamanho da fonte */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Indicação de botão clicável */
+    transition: background-color 0.3s ease;
+    /* Transição suave para mudanças de cor */
 }
 
 /* Efeito de interação no botão */
-.content button[type="submit"]:hover, .content .all-cars-button:hover {
-    background-color: #3c5771; /* Cor de destaque ao passar o mouse */
+.content button[type="submit"]:hover,
+.content .all-cars-button:hover {
+    background-color: #3c5771;
+    /* Cor de destaque ao passar o mouse */
 }
 
 /* ========================
@@ -127,7 +172,10 @@
    ======================== */
 .content .all-cars-button {
     /* Estilização específica do botão para mostrar todos os carros */
-    display: inline-block; /* Permite margem direita */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    margin-left: 8px; /* Espaço entre os botões */
+    display: inline-block;
+    /* Permite margem direita */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    margin-left: 8px;
+    /* Espaço entre os botões */
 }

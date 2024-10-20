@@ -1,6 +1,6 @@
 // Adiciona um evento que será acionado quando o conteúdo do DOM for totalmente carregado
-document.addEventListener('DOMContentLoaded', function() {
-  
+document.addEventListener('DOMContentLoaded', function () {
+
     // Recupera o tema atual do localStorage do navegador
     const theme = localStorage.getItem('theme');
     // Obtém a referência para o elemento body do documento
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleTheme() {
         // Adiciona ou remove a classe 'dark-mode' ao corpo
         body.classList.toggle('dark-mode');
-        
+
         // Verifica se o modo escuro está ativo
         if (body.classList.contains('dark-mode')) {
             // Altera o ícone para o sol, indicando modo claro

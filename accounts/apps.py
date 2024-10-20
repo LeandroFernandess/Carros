@@ -1,5 +1,5 @@
 """
-Configuração do aplicativo 'accounts' para um projeto Django.
+Configuração do aplicativo 'accounts' para um projeto Django
 
 Descrição:
 ----------

@@ -2,7 +2,7 @@
 Cars Application Configuration Module
 
 Este módulo configura a aplicação 'cars' no projeto Django, definindo
-atributos essenciais e atividades a serem realizadas quando a aplicação estiver pronta.
+atributos essenciais e atividades a serem realizadas quando a aplicação estiver pronta
 
 Dependências:
 -------------
