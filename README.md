@@ -47,11 +47,11 @@ Django-Master-Carros/
 │   └── wsgi.py
 ├── cars/
 │   ├── migrations/
-    |   ├── 0001_initial.py
-    |   ├── 0002_brand_alter_car_brand.py
-    |   ├── 0003_car_photo_car_plate.py
-    |   ├── 0004_carinventory.py
-    |   ├── 0005_car_bio.py
+│   |   ├── 0001_initial.py
+│   |   ├── 0002_brand_alter_car_brand.py
+│   |   ├── 0003_car_photo_car_plate.py
+│   |   ├── 0004_carinventory.py
+│   |   ├── 0005_car_bio.py
 │   ├── templates/
 │   │   ├── car_delete.html
 │   │   ├── car_detail.html
@@ -68,7 +68,7 @@ Django-Master-Carros/
 ├── docs/
 ├── media/
 ├── openai_api/
-   ├── client.py
+│  ├── client.py
 ├── venv/
 ├── .gitignore
 ├── carros_uwsgi.ini
